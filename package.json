@@ -13,10 +13,11 @@
   "license": "MIT",
   "dependencies": {
     "@notionhq/client": "^3.0.0",
-    "enquirer": "^2.3.6",
+    "commander": "^14.0.1",
+    "enquirer": "^2.4.1",
     "lowdb": "^3.0.0",
-    "node-fetch": "^2.6.7",
-    "uuid": "^9.0.0"
+    "node-fetch": "^2.7.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

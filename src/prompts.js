@@ -1,6 +1,5 @@
 const { prompt } = require('enquirer');
 
-
 async function promptEntry() {
   const resp = await prompt([
     { type: 'input', name: 'what', message: 'What did you work on?' },
@@ -10,7 +9,6 @@ async function promptEntry() {
     { type: 'input', name: 'duration_minutes', message: 'Duration minutes (optional)', initial: '' }
   ]);
 
-
   return {
     what: resp.what.trim(),
     why: resp.why.trim() || null,
@@ -19,6 +17,5 @@ async function promptEntry() {
     duration_minutes: resp.duration_minutes ? Number(resp.duration_minutes) : null
   };
 }
-
 
 module.exports = { promptEntry };

@@ -4,13 +4,11 @@ const { toMarkdown } = require('./exporters/markdown');
 const fs = require('fs');
 const path = require('path');
 
-
 async function logFlow() {
   const entry = await promptEntry();
   const saved = await store.addEntry(entry);
   console.log('Saved entry', saved.id);
 }
-
 
 async function exportMdFlow(opts = {}) {
   const date = opts.date;
@@ -29,6 +27,5 @@ async function exportMdFlow(opts = {}) {
     console.log('Wrote', file);
   }
 }
-
 
 module.exports = { logFlow, exportMdFlow };

@@ -1,12 +1,11 @@
 #!/usr/bin/env node
-const program = require('commander');
+const { Command } = require('commander'); // <-- use destructuring
+const program = new Command();             // <-- create instance
 const pkg = require('../package.json');
 const { logFlow, exportMdFlow } = require('../src/index');
 const { sendSlackSummary } = require('../src/integrations/slack');
 
-
 program.version(pkg.version);
-
 
 program
   .command('log')
@@ -14,7 +13,6 @@ program
   .action(async () => {
     await logFlow();
   });
-
 
 program
   .command('export')
@@ -26,7 +24,6 @@ program
   .action(async (opts) => {
     await exportMdFlow(opts);
   });
-
 
 program
   .command('send')
@@ -42,6 +39,5 @@ program
     }
     await sendSlackSummary(opts.date || null, CH);
   });
-
 
 program.parse(process.argv);

@@ -12,5 +12,4 @@ function toMarkdown(entries) {
   return parts.join('\n\n---\n\n');
 }
 
-
 module.exports = { toMarkdown };

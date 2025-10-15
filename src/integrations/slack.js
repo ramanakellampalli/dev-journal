@@ -2,7 +2,6 @@ const fetch = require('node-fetch');
 const store = require('../store');
 const { toMarkdown } = require('../exporters/markdown');
 
-
 async function sendSlackSummary(date, webhookUrl) {
   const entries = await store.listEntries({ date });
   if (!entries.length) {
@@ -20,6 +19,5 @@ async function sendSlackSummary(date, webhookUrl) {
   }
   console.log('Sent summary to Slack');
 }
-
 
 module.exports = { sendSlackSummary };
